@@ -56,16 +56,23 @@ public void insertSorted(int number){
 	}
 
 public void removeValue(int value){
-	for(int i=0;i<counter;i++)
+	if( value <= 10000 && value >=0)
+	{
+	for(int i=0;i<arr.length;i++)
 	{
 		if(arr[i]==value)
 		{
 			arr[i]=973248;
 			counter--;
+			
 		}
 		
 	}
 	Arrays.sort(arr);
+	}
+	else{
+		rs1.storeNewResult("\nvalue to be deleted Out Of Bound :" +value);
+	}
 }
 public int sum()
 {
@@ -100,5 +107,13 @@ public String toString() {
 	}
 	return null;
 	
+}
+public void clean()
+{
+for(int i=0;i<arr.length;i++)
+{
+arr[i]=	973248;
+counter=0;
+}
 }
 }
