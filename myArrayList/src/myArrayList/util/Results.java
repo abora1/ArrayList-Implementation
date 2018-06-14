@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Results implements FileDisplayInterface, StdoutDisplayInterface {
-	public ArrayList resList = new ArrayList();
+	public ArrayList<String> resList = new ArrayList<>();
 
 	public void storeNewResult(String s) {
 		resList.add(s);
@@ -34,7 +34,6 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 		}
 
 	public void writeToStdout() {
-
 		System.out.println(resList + " \n");
 	}
 }

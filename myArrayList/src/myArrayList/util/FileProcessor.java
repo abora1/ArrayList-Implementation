@@ -18,7 +18,7 @@ public class FileProcessor {
 		catch(Exception e){
 		System.out.println("No file Found");
 		e.printStackTrace();
-			
+		System.exit(0);
 		}
 			
 	}
@@ -34,10 +34,12 @@ public class FileProcessor {
 		catch(IOException e){
 			System.out.println("File cannot be Fetched");
 			e.printStackTrace();
+			System.exit(0);
 		}
 		catch(Exception e){
 			System.out.println("exception occured while parsing file");
 			e.printStackTrace();
+			System.exit(0);
 		}
 		return null;	
 	}

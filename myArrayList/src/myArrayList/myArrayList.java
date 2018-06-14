@@ -2,11 +2,21 @@ package myArrayList;
 
 import java.util.Arrays;
 
+import myArrayList.util.Results;
+
 public class myArrayList {
 	private static int counter=0;
 	private int[] arr=new int[50];
-	
-public myArrayList(){
+	Results rs1=new Results();
+	public myArrayList(){
+		arr=new int[50];
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i]=973248;
+		}
+	}
+public myArrayList(Results rs1){
+	this.rs1=rs1;
 	arr=new int[50];
 	for(int i=0;i<arr.length;i++)
 	{
@@ -15,7 +25,7 @@ public myArrayList(){
 	
 }
 public void insertSorted(int number){
-	if(number<=10000)
+	if( number <= 10000 && number >=0)
 	{
 	if(counter<arr.length){
 		arr[counter]=number;
@@ -40,6 +50,9 @@ public void insertSorted(int number){
 		Arrays.sort(arr);
 	}
 	}
+	else{
+		rs1.storeNewResult("\nNumber Out Of Bound :" +number);
+	}
 	}
 
 public void removeValue(int value){
@@ -51,7 +64,8 @@ public void removeValue(int value){
 			counter--;
 		}
 		
-}Arrays.sort(arr);
+	}
+	Arrays.sort(arr);
 }
 public int sum()
 {
