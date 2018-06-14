@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FileProcessor {
+	public FileProcessor(){}
 	private BufferedReader br=null;
 	
 	public FileProcessor(String input) {
@@ -39,5 +40,13 @@ public class FileProcessor {
 			e.printStackTrace();
 		}
 		return null;	
+	}
+	public void fileclose()
+	{
+		try {
+			br.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
