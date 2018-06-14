@@ -10,9 +10,8 @@ import myArrayList.util.Results;
 public class Driver {
 
 	public static void main(String[] args) throws IOException {
-
-		if(args.length!=2)
-		{
+//It create Results and myArrayList objects and passes them to the test me function
+		if (args.length != 2) {
 			System.out.println("Please Enter Both Input and Output Files");
 			System.exit(0);
 		}
@@ -21,7 +20,7 @@ public class Driver {
 		FileProcessor fp = new FileProcessor(abc);
 		Results rs = new Results();
 		myArrayList my = new myArrayList(rs);
-		
+
 		myArrayListTest test1 = new myArrayListTest(fp);
 		test1.testme(my, rs);
 		rs.writeToStdout();

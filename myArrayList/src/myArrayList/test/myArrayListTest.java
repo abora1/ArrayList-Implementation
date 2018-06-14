@@ -6,7 +6,12 @@ import myArrayList.myArrayList;
 import myArrayList.util.Results;
 import myArrayList.util.FileProcessor;
 
+/**
+ * @author akshay
+ *
+ */
 public class myArrayListTest {
+	//This class tests the myarrayList class with 10 test cases
 	FileProcessor fp = new FileProcessor();
 	 Results res=new Results();
 	myArrayList myAL = new myArrayList();
@@ -31,7 +36,7 @@ public class myArrayListTest {
 		
 		
 	}
-	public void testcase1(){
+	public void testcase1(){ //IT checks if initially the array is empty
 		boolean check;
 		if(myAL.size()==0){
 			check=true;
@@ -43,7 +48,7 @@ public class myArrayListTest {
 		res.storeNewResult("\nChecking if The array is empty Initially returns result : "+check);
 		
 	}
-	public void testcase2(){
+	public void testcase2(){//IT stores 3 values and checks the size.
 		res.storeNewResult("\n****************TEST CASE 2********************");
 		boolean c1;
 		myAL.insertSorted(123);
@@ -60,7 +65,7 @@ public class myArrayListTest {
 		}
 		res.storeNewResult("\nTrying insertion with some out of order inputs and checking the final size to ensure bound.Test case returns : " +c1 );
 	}
-	public void testcase3(){
+	public void testcase3(){//stores some values and checks the index of a value
 		boolean c2;
 		res.storeNewResult("\n****************TEST CASE 3********************");
 		myAL.insertSorted(2345);
@@ -77,7 +82,7 @@ public class myArrayListTest {
 		res.storeNewResult("\nTrying inserting Values and Finding index of a value.Test case returns :"+c2);
 		res.storeNewResult("\n The index of value 2345 is :" +x);
 	}
-	public void testcase4(){
+	public void testcase4(){ //inserts multiple instance of same value and removes it and confirms with finding the index
 		res.storeNewResult("\n****************TEST CASE 4********************");
 		boolean c3;
 		myAL.insertSorted(5787);
@@ -97,7 +102,7 @@ public class myArrayListTest {
 		res.storeNewResult("\nTrying inserting Value(5787) multiple times and deleting same value and checking index(If index returns -1 then value is not in the array).Test case returns :"+c3);
 		res.storeNewResult("\nFalse means after deletion no copy of same value resides in memory");
 	}
-	public void testcase5(){
+	public void testcase5(){//Test case tries to remove an out of bound value
 		res.storeNewResult("\n****************TEST CASE 5********************");
 		boolean c4;
 		try{
@@ -111,7 +116,7 @@ public class myArrayListTest {
 		}
 		res.storeNewResult("\n Trying to delete a value that is out of bound.Test case returns :"+c4);
 	}
-	public void testcase6(){
+	public void testcase6(){//Inserts 100 random numbers to check if the array size increases dynamically
 		res.storeNewResult("\n****************TEST CASE 6********************");
 		boolean c5;
 		for(int i=0;i<100;i++)
@@ -127,7 +132,7 @@ public class myArrayListTest {
 		res.storeNewResult("\nInserting 100 values in array to check if array size increases dynamically.Test case returns :"+c5);
 		res.storeNewResult("\ntotal size is :"+myAL.size());
 	}
-	public void testcase7(){
+	public void testcase7(){//Tests the insert,remove and size with inserting and removing some values
 		res.storeNewResult("\n****************TEST CASE 7********************");
 		boolean c6;
 		int x1,x2,x3;
@@ -150,7 +155,7 @@ public class myArrayListTest {
 		res.storeNewResult("\nvalues inserted and deleted : 9876,9654,9000 ");
 		res.storeNewResult("\nSize Before and After Insertion :"+x1+", "+x2+ " and After Deletion :"+x3);
 	}
-	public void testcase8(){
+	public void testcase8(){//Tests the insert,remove and sum with inserting and removing some values
 		res.storeNewResult("\n****************TEST CASE 8********************");
 		boolean c7;
 		int x1,x2,x3;
@@ -173,7 +178,7 @@ public class myArrayListTest {
 		res.storeNewResult("\nvalues inserted and deleted : 500,300,200 ");
 		res.storeNewResult("\nSum Before and After Insertion :"+x1+", "+x2+ " and After Deletion :"+x3);
 	}
-	public void testcase9(){
+	public void testcase9(){//empties the array and checks size again
 		res.storeNewResult("\n****************TEST CASE 9********************");
 		boolean c8;
 		myAL.clean();  //clearing out the array
@@ -186,7 +191,7 @@ public class myArrayListTest {
 		}
 		res.storeNewResult("\nEmptying the Array and checking the size.Test case returns :" +c8 +" and size of array is :" +myAL.size());
 	}
-	public void testcase10() {
+	public void testcase10() {//Takes the input file and stores with and prints various functions on the file and STDOUT display.
 		final ArrayList resList1 = new ArrayList();
 		Integer i = null; 
 		try{ 

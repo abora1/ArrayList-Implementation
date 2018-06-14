@@ -6,13 +6,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * @author akshay
+ *This class stores all the results of each test case in list and then writes them to output file and also to the STDOUT display
+ */
 public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 	public ArrayList<String> resList = new ArrayList<>();
-
+//add strings to the ArrayList
 	public void storeNewResult(String s) {
 		resList.add(s);
 	}
-
+//Used to write to the Output file Specified
 	public void writeToFile(String s) {
 		File f1=null;
 		FileWriter fp1=null;
@@ -32,7 +36,7 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 			}
 		}
 		}
-
+//Write to console.
 	public void writeToStdout() {
 		System.out.println(resList + " \n");
 	}
